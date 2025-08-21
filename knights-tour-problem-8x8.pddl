@@ -1,20 +1,115 @@
 (define (problem knights-tour-problem-8x8)
     (:domain knights-tour)
 
-    (:objects
-        A1 A2 A3 A4 A5 A6 A7 A8
-        B1 B2 B3 B4 B5 B6 B7 B8
-        C1 C2 C3 C4 C5 C6 C7 C8
-        D1 D2 D3 D4 D5 D6 D7 D8
-        E1 E2 E3 E4 E5 E6 E7 E8
-        F1 F2 F3 F4 F5 F6 F7 F8
-        G1 G2 G3 G4 G5 G6 G7 G8
-        H1 H2 H3 H4 H5 H6 H7 H8
-    )
+    (:objects n1 n2 n3 n4 n5 n6 n7 n8)
 
     (:init
         ; we have chosen the upper right corner.
-        (at A8)
-        (visited A8)
+        (at n1 n8)
+        (visited n1 n8)
+
+        ; diff_by_one
+        (diff_by_one n1 n2)
+        (diff_by_one n2 n1)
+        (diff_by_one n2 n3)
+        (diff_by_one n3 n2)
+        (diff_by_one n3 n4)
+        (diff_by_one n4 n3)
+        (diff_by_one n4 n5)
+        (diff_by_one n5 n4)
+        (diff_by_one n5 n6)
+        (diff_by_one n6 n5)
+        (diff_by_one n6 n7)
+        (diff_by_one n7 n6)
+        (diff_by_one n7 n8)
+        (diff_by_one n8 n7)
+
+        ;diff_by_two
+        (diff_by_two n1 n3)
+        (diff_by_two n3 n1)
+        (diff_by_two n2 n4)
+        (diff_by_two n4 n2)
+        (diff_by_two n3 n5)
+        (diff_by_two n5 n3)
+        (diff_by_two n4 n6)
+        (diff_by_two n6 n4)
+        (diff_by_two n5 n7)
+        (diff_by_two n7 n5)
+        (diff_by_two n6 n8)
+        (diff_by_two n8 n6)
+    )
+
+    (:goal (and (visited n1 n1)
+                (visited n1 n2)
+                (visited n1 n3)
+                (visited n1 n4)
+                (visited n1 n5)
+                (visited n1 n6)
+                (visited n1 n7)
+                (visited n1 n8)
+
+                (visited n2 n1)
+                (visited n2 n2)
+                (visited n2 n3)
+                (visited n2 n4)
+                (visited n2 n5)
+                (visited n2 n6)
+                (visited n2 n7)
+                (visited n2 n8)
+
+                (visited n3 n1)
+                (visited n3 n2)
+                (visited n3 n3)
+                (visited n3 n4)
+                (visited n3 n5)
+                (visited n3 n6)
+                (visited n3 n7)
+                (visited n3 n8)
+
+                (visited n4 n1)
+                (visited n4 n2)
+                (visited n4 n3)
+                (visited n4 n4)
+                (visited n4 n5)
+                (visited n4 n6)
+                (visited n4 n7)
+                (visited n4 n8)
+
+                (visited n5 n1)
+                (visited n5 n2)
+                (visited n5 n3)
+                (visited n5 n4)
+                (visited n5 n5)
+                (visited n5 n6)
+                (visited n5 n7)
+                (visited n5 n8)
+
+                (visited n6 n1)
+                (visited n6 n2)
+                (visited n6 n3)
+                (visited n6 n4)
+                (visited n6 n5)
+                (visited n6 n6)
+                (visited n6 n7)
+                (visited n6 n8)
+
+                (visited n7 n1)
+                (visited n7 n2)
+                (visited n7 n3)
+                (visited n7 n4)
+                (visited n7 n5)
+                (visited n7 n6)
+                (visited n7 n7)
+                (visited n7 n8)
+
+                (visited n8 n1)
+                (visited n8 n2)
+                (visited n8 n3)
+                (visited n8 n4)
+                (visited n8 n5)
+                (visited n8 n6)                        
+                (visited n8 n7)
+                (visited n8 n8)        
+            )
     )
 )
