@@ -63,6 +63,27 @@
         (plus1 n37 n38)
         (plus1 n38 n39)
         (plus1 n39 n40)
+
+        ;; specify distances between locations:
+        (= (distance depot GV) 573)
+        (= (distance depot E) 896)
+        (= (distance depot BW) 876)
+        (= (distance GV depot) 573)
+        (= (distance GV E) 372)
+        (= (distance GV BW) 296)
+        (= (distance E depot) 896)
+        (= (distance E GV) 372)
+        (= (distance E BW) 79)
+        (= (distance BW depot) 876)
+        (= (distance BW GV) 296)
+        (= (distance BW E) 79)
+
+        ;; specify per-kilometer cost for the trucks:
+        (= (per_km_cost ADoubleRef) 3.04)
+        (= (per_km_cost BDouble) 2.59)
+
+        ;; initialize total cost to zero
+        (= (total-cost) 0)
     )
 
     (:goal (and
@@ -76,4 +97,6 @@
         (at BDouble depot)
     )
     )
+
+    (:metric minimize (total-cost))
 )

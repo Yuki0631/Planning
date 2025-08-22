@@ -1,5 +1,5 @@
 (define (domain linehaul_without_costs)
-    (:requirements :strips :typing)
+    (:requirements :strips :typing :action-costs)
 
     (:types
         location truck quantity - object
@@ -12,6 +12,12 @@
         (demand_chilled_goods ?l - location ?q - quantity)
         (demand_ambient_goods ?l - location ?q - quantity)
         (plus1 ?q1 ?q2 - quantity)
+    )
+
+    (:functions
+        (distance ?l1 ?l2 - location)
+        (per_km_cost ?t - truck) ; per-kilometer cost of each truck
+        (total-cost)
     )
 
     ; The effect of the delivery action is to decrease demand at ?l and free capacity of ?t by one
@@ -59,6 +65,7 @@
         :effect (and 
             (not (at ?t ?from))
             (at ?t ?to)
+            (increase (total-cost) (* (distance ?from ?to) (per_km_cost ?t)))
         )
     )
     
