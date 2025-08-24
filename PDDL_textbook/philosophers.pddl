@@ -12,7 +12,7 @@
         (eating ?p - philosopher)
         (hold_right_fork ?p -philosopher)
         ;; states of a fork:
-        (free ?f -fork)
+        (free ?f - fork)
         (taken ?f - fork)
         ;; describing the topology:
         (is_right_fork ?p - philosopher ?f - fork)
