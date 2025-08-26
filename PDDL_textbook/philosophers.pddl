@@ -10,7 +10,7 @@
         (thinking ?p - philosopher)
         (wait_left_fork ?p - philosopher)
         (eating ?p - philosopher)
-        (hold_right_fork ?p -philosopher)
+        (hold_right_fork ?p - philosopher)
         ;; states of a fork:
         (free ?f - fork)
         (taken ?f - fork)
